@@ -3,16 +3,12 @@ services:
   backend:
     image: registry.gitlab.com/turniere/turniere-backend/dev:master
     container_name: turniere-backend
-    networks:
-      - turniere
+    ports:
+      - "3000:3000" 
   frontend:
     image: registry.gitlab.com/turniere/turniere-frontend:master
     container_name: turniere-frontend
     environment:
-      - TURNIERE_API_URL=http://backend:3000
-    networks:
-      - turniere
+      - TURNIERE_API_URL=http://localhost:3000
     ports:
       - "80:80" 
-networks:
-  turniere:
