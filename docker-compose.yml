@@ -1,0 +1,18 @@
+version: "3.7"
+services:
+  backend:
+    image: registry.gitlab.com/turniere/turniere-backend/dev:master
+    container_name: turniere-backend
+    networks:
+      - turniere
+  frontend:
+    image: registry.gitlab.com/turniere/turniere-frontend:master
+    container_name: turniere-frontend
+    environment:
+      - TURNIERE_API_URL=http://backend:3000
+    networks:
+      - turniere
+    ports:
+      - "80:80" 
+networks:
+  turniere:
