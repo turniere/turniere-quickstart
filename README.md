@@ -9,4 +9,6 @@ To install Docker on your machine just use the package manager of your choice or
 $ git clone https://github.com/turniere/turniere-quickstart
 $ cd turniere-quickstart
 $ docker-compose up
+$ # this will start the backend on port 3000 and the frontend on port 80
 ```
+Open http://localhost/ with your preferred browser.
